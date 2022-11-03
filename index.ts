@@ -1,12 +1,5 @@
-import { of, fromEvent, merge, animationFrameScheduler } from 'rxjs';
-import {
-  map,
-  take,
-  debounceTime,
-  skip,
-  auditTime,
-  shareReplay,
-} from 'rxjs/operators';
+import { fromEvent, merge, animationFrameScheduler } from 'rxjs';
+import { map, debounceTime, skip, auditTime } from 'rxjs/operators';
 
 const scroll$ = fromEvent(window, 'scroll', { passive: true });
 const scrolling$ = scroll$.pipe(map(() => true));
